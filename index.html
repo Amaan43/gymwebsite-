@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>GymFit</h1>
+        </div>
+        <nav id="navbar">
+            <ul class="menu">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#training">Training</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#membership">Membership</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <span class="close-menu" id="closeMenu">&times;</span>
+        </nav>
+        <div class="menu-toggle" id="menuToggle">
+            <span>&#9776;</span>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h2>Welcome to <span class="gymfit">GymFit</span></h2>
+            <p>Your Ultimate Fitness Destination</p>
+            <button class="btn-primary" onclick="toggleJoinForm()">Join Us Now</button>
+            <button class="btn-secondary" onclick="toggleJoinForm()">Learn More</button>
+        </div>
+    </section>
+
+    <!-- Join Form Section -->
+    <div id="joinForm" class="join-form-container">
+        <button class="close-btn" onclick="toggleJoinForm()">X</button>
+        <h3>Join Our Gym</h3>
+        <form id="membershipForm" onsubmit="submitForm(event)">
+            <input type="text" placeholder="Your Name" required><br>
+            <input type="email" placeholder="Your Email" required><br>
+            <input type="tel" placeholder="Your Phone" required><br>
+            <button type="submit" class="btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <!-- Thank You Modal -->
+    <div id="thankYouModal" class="thank-you-modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeThankYouModal()">×</span>
+            <h2>Thank you for joining us!</h2>
+            <p>Check your email for further details.</p>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="g1.jpg" alt="Gym Image">
+            </div>
+            <div class="about-text">
+                <h2>About Our Gym</h2>
+                <p>At our gym, we foster a healthy and motivating environment for fitness enthusiasts. Whether you're a beginner or an experienced athlete, we offer personalized training programs tailored to your needs.</p>
+                <p>With cutting-edge equipment, expert trainers, and a variety of classes, our gym is more than just a workout space—it's a lifestyle.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Section -->
+    <section class="training" id="training">
+        <h2>Our Training Programs</h2>
+        <div class="training-container">
+            <div class="training-card">
+                <img src="s1.jpg" alt="Strength Training">
+                <h3>Strength Training</h3>
+                <p>Build muscle and increase strength with our expert-led sessions.</p>
+                <button class="btn-primary" onclick="toggleJoinForm()">Learn More</button>
+            </div>
+            <div class="training-card">
+                <img src="bg.jpg" alt="Cardio Training">
+                <h3>Cardio Training</h3>
+                <p>Boost your endurance with high-intensity cardio workouts.</p>
+                <button class="btn-primary" onclick="toggleJoinForm()">Learn More</button>
+            </div>
+            <div class="training-card">
+                <img src="y1.jpg" alt="Yoga Training">
+                <h3>Yoga & Flexibility</h3>
+                <p>Improve flexibility, balance, and mental focus with our yoga programs.</p>
+                <button class="btn-primary" onclick="toggleJoinForm()">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial-cards">
+            <div class="testimonial-card">
+                <img src="p1.jpg" alt="Client 1" class="client-image">
+                <div class="testimonial-content">
+                    <h3>John Doe</h3>
+                    <p class="role">Gym Member</p>
+                    <p class="testimonial-text">"This gym has completely changed my lifestyle. The trainers are amazing, and the facilities are top-notch."</p>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <img src="p2.jpg" alt="Client 2" class="client-image">
+                <div class="testimonial-content">
+                    <h3>Jane Smith</h3>
+                    <p class="role">Fitness Enthusiast</p>
+                    <p class="testimonial-text">"I love the variety of classes here! Highly recommend joining."</p>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <img src="p3.jpg" alt="Client 3" class="client-image">
+                <div class="testimonial-content">
+                    <h3>Michael Lee</h3>
+                    <p class="role">Personal Trainer Client</p>
+                    <p class="testimonial-text">"The personal trainers here are very knowledgeable and helped me achieve my fitness goals."</p>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Section -->
+    <section class="membership" id="membership">
+        <h2>Membership Plans</h2>
+        <div class="membership-cards">
+            <div class="card">
+                <h3>Basic Plan</h3>
+                <p>Access to gym equipment and cardio section.</p>
+                <p class="price">$20/month</p>
+                <button class="cta-btn" onclick="toggleJoinForm()">Join Now</button>
+            </div>
+            <div class="card">
+                <h3>Standard Plan</h3>
+                <p>Basic plan + personal trainer sessions.</p>
+                <p class="price">$35/month</p>
+                <button class="cta-btn" onclick="toggleJoinForm()">Join Now</button>
+            </div>
+            <div class="card">
+                <h3>Premium Plan</h3>
+                <p>All access + nutrition guidance and yoga classes.</p>
+                <p class="price">$50/month</p>
+                <button class="cta-btn" onclick="toggleJoinForm()">Join Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-grid">
+            <form action="" method="POST" class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?..."></iframe>
+            </div>
+        </div>
+        <div class="contact-info-social">
+            <div class="contact-info">
+                <p>123 Gym Street, Ajmer | Email: contact@gmail.com | Phone: +123-456-7890</p>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 GymFit. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        
+        function toggleJoinForm() {
+    const form = document.getElementById('joinForm');
+
+    if (form.classList.contains('show')) {
+        form.classList.remove('show');
+        setTimeout(() => {
+            form.style.display = 'none';
+        }, 500); // Wait for transition to finish
+    } else {
+        form.style.display = 'block';
+        setTimeout(() => {
+            form.classList.add('show');
+        }, 10); // Small delay to trigger transition
+    }
+}
+
+function submitForm(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    const joinForm = document.getElementById('joinGymForm'); // Form element
+    const formContainer = document.getElementById('joinForm');
+    const thankYouModal = document.getElementById('thankYouModal');
+
+    // Clear the form fields after submission
+    joinForm.reset();
+
+    // Hide the form container
+    formContainer.style.display = 'none';
+    formContainer.classList.remove('show');
+
+    // Show thank you modal
+    thankYouModal.style.display = 'block';
+}
+
+// Close the thank you modal
+function closeThankYouModal() {
+    const thankYouModal = document.getElementById('thankYouModal');
+    thankYouModal.style.display = 'none';
+}
+
+// Close the modal if the user clicks outside the modal
+window.onclick = function(event) {
+    const thankYouModal = document.getElementById('thankYouModal');
+    if (event.target == thankYouModal) {
+        thankYouModal.style.display = 'none';
+    }
+}
+
+        // JavaScript for Navbar Toggle
+        const menuToggle = document.getElementById("menuToggle");
+        const navbar = document.getElementById("navbar");
+        const closeMenu = document.getElementById("closeMenu");
+
+        // Open the menu
+        menuToggle.onclick = function () {
+            navbar.classList.add("active");
+        };
+
+        // Close the menu
+        closeMenu.onclick = function () {
+            navbar.classList.remove("active");
+        };
+
+        function enroll() {
+            alert("Thank you for joining! We'll get back to you soon.");
+        }
+
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            alert("Your message has been sent! We will contact you shortly.");
+        });
+     
+        window.onscroll = function () {
+            var header = document.querySelector("header");
+            if (window.pageYOffset > 0) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
+        };
+        
+      
+
+
+    </script>
+
+</body>
+
+</html>
